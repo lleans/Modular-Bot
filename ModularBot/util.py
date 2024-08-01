@@ -109,12 +109,14 @@ class ModularUtil:
         if is_welcome:
             title: str = "Welcome".upper()
             mssg: str = GuildMessage.Banner.WELCOME.upper()
-            banner: str = Image.open(path.join(cls.__ASSETS_DIR, 'welcome.png'))
+            banner: str = Image.open(
+                path.join(cls.__ASSETS_DIR, 'welcome.png'))
 
         else:
             title = "Goodbye".upper()
             mssg = GuildMessage.Banner.LEAVE.upper()
-            banner: str = Image.open(path.join(cls.__ASSETS_DIR, 'leaving.jpg'))
+            banner: str = Image.open(
+                path.join(cls.__ASSETS_DIR, 'leaving.jpg'))
 
         profile_size: int = 2.2
 

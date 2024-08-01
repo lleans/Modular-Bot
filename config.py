@@ -20,6 +20,11 @@ class ModularBotConst:
         START: str = "Friday-09"
         END: str = "Friday-21"
 
+    @staticmethod
+    def get_secret(key: str) -> str | int | None:
+        with open(getenv(key), 'r') as a:
+            return a.read()
+
     SERVER_NAME: str = "Kantin Yoyok"
     BOT_NAME: str = "Pak Yoyok"
     BOT_PREFIX: str = "!pkyyk"
@@ -29,7 +34,7 @@ class ModularBotConst:
 
     # Begin Environment Variable
     # TODO change it after debugging
-    TOKEN: str = getenv('TOKEN')
+    TOKEN: str = get_secret('TOKEN')
     # TOKEN = open('TOKEN').readline()
     LAVALINK_SERVER: str = getenv('LAVALINK_SERVER')
     LAVALINK_PASSWORD: str = getenv('LAVALINK_PASSWORD')
